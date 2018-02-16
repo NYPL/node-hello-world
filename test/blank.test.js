@@ -5,7 +5,7 @@ const chaiAsPromised = require('chai-as-promised')
 chai.should()
 chai.use(chaiAsPromised)
 
-describe('Fake Test', () => {
+describe('Fake Tests', () => {
   it('1 should equal 1', () => {
     let result = 1
 

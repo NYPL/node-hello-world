@@ -4,7 +4,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "deploy": "curl -f --data build=true -X POST $docker_hub_hook",
+    "deploy": "curl -f -X POST $docker_hub_hook",
     "lint": "./node_modules/.bin/standard",
     "test": "NODE_ENV=test ./node_modules/.bin/nyc --reporter=lcov --reporter=text ./node_modules/mocha/bin/mocha",
     "coverage": "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls",

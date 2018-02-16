@@ -7,14 +7,14 @@ cache:
 install: npm install
 before_script: echo 'Running unit tests'
 script: npm test
-before_deploy: echo 'All unit tests passed; Preparing to deploy to AWS'
+before_deploy: echo 'All unit tests passed; Preparing to trigger Docker Hub build'
 deploy:
 - provider: script
   skip_cleanup: true
-  script: npm run deploy-development
+  script: npm run deploy
   on:
-    branch: development
+    branch: master
 after_deploy: echo 'Successfully Trigger Docker Hub build'
 env:
   global:
-  - secure: LJNyqMr2+QN2qoZUS67iG8MieNkQeQekd0JLUSt0/Ve9tr+K/OPDB2bwW2zD30em5SwQ+h6hSZYNBAyH3l5G9XRH4dizG9s6BpURb9Ng6TvW+ebFSKtGyOHNUCaL7LAIcnckYCqG77anjjuzeGlZuTrLB9fCpOEBS5+wHhmXyOJf5pt8FIS2cRwM6FFCovZUCyZAFn59V15QaO1Liw8jYi4CGNwUFga5yvG3ZNRPNmA0pLJkGNqBDpXMzHwTbqNGWoOCInWEQ3NUIJ0iH0GhxFtn6HqKPlCgdZPWNanSSr+QMRh01FVYA7nnyKVkfMHBDqNw5iUWlKA8s0FuKPgdPgvFy8Ku/YwUXLncpdpJ59ht8fhj7d2A84kZqPAsJue2szYLMgJvzaiGDcItvamhZfZL0EnVVcdnWISK792jU18gAyE0pg3ZA6hcl90KGdyE7XDqycosce4YspRf7b7LAesNfeg/WPZ7Pdx9vDAD1J94e7rXaO8akFdS5f5MpcHEy1HhYlFyTbRvAPx9uGkypypOoQqqUDxT25LyhnWV2+bwdTqxKXxkyP/PvJ2eTsAT7fnUxrC2igeejn70BfpMxy24qYt6cAQJT0PpCXTWJopGuKU9oKjhfE7RolMB6bEZpruDZ8mKnawlLirYy3xNRnebbPbs2tD9NHroOvl5qIQ=
+  - secure: HE6/m0S+Mgv3p7HsADwESSkG0M9glgjrWSkQuj2v3r6ucPoR+Ko4yoB+5sZ1VOqaviyPSmVqUuLxzKnEevgeqId5P9aGTTuAp2DnXRGnfIHYZSQcr0+YNkwyWHtDxwVNLci/LRQTnydjE9Bvi0CN73b+Z8yZYtOHnq3l7pE65Z4OGdMYuRw0tQStQ5Cjd7EnJxPPPTak99e34enxeAejvQsX0JW4fzSQk5o+EiN+t//hWUw1CDcDCESJvY/CNGvOjqhkMS2FlGh8ohSbQ7lOE2hebSpOoYcK4Vs3GCd7JyikPCi7Tqt5ggu5bUCim/2yKwhKIR7qTtf+m8ZUxzaD2iBDnG2ERtVlaB0hYQ4WtM9voGW5NLFp/hq8IyhXaJltyDh6cs4XqqH5qQkKUZHKz1187Guv1049Ru3LUTO2/kz1DhZB2TFiQVadPn8UEZP/+zgGv1hYdTd8+lVMcq2VPCwCvPt1G3uvGlG/XAL7w4iUwfNeWyr9wgoKpVQY5s6Lry0HKFiG6NC34icCHcXGHczgYhisJo5LDjEeyFAs/7QFjOLlquSq/NIHlypq77ndM6dKRCHW1QYdFSXZPTi9pZN0JhDMXkkDjQltWyIQCv2TfAO+KnGFto+VvGc5tLlyjMwYCJSd0tOiC63K0HEwPqTX/Hmt9JncDmKDJD+3wsw=
